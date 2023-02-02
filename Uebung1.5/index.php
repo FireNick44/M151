@@ -8,5 +8,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <form method="POST" action="?">
     <input type="text" name="name" placeholder="Benutzername"/>
     <input type="submit" value="Absenden"/>
-
 </form>
