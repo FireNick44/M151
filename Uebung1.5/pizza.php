@@ -11,18 +11,20 @@
    }
 
    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      array_push($array, $_POST['name']); //array += POST
-      $_SESSION['a'] = $array; //speicherung in session
+      if ($_POST['name'] !== ''){
+	      array_push($array, $_POST['name']); //array += POST
+	      $_SESSION['a'] = $array; //speicherung in session
+      }
    }
 
    foreach ($array as $value) {
-      echo '<li>' . $value . '</li>'; //Ausgabe
+	   echo '<li>' . $value . '</li>'; //Ausgabe
    }
    ?>
 </ol>
 <br>
 <p>Add more ingredients:</p>
 <form method="POST" action="?">
-   <input type="text" name="name" placeholder="Ingredient" />
-   <input type="submit" value="Add" />
+    <input type="text" name="name" placeholder="Ingredient" />
+    <input type="submit" value="Add" />
 </form>
