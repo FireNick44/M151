@@ -14,6 +14,8 @@ try {
 }
 ?>
 
+<h1>Bestellungsübersicht</h1>
+
 <table>
    <tr>
       <th>Nachname</th>
@@ -25,6 +27,7 @@ try {
    <?php
    $statement = $conn->prepare("SELECT * FROM customers");
    $statement->execute();
+
    foreach ($conn->query("SELECT * FROM customers") as $row) {
       echo "<tr>";
       echo "<td>{$row['last_name']}</td>";
