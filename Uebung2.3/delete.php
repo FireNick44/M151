@@ -14,6 +14,7 @@ try {
 sendDeleteStatement('invoices', 'order_id', $conn);
 sendDeleteStatement('order_details', 'order_id', $conn);
 sendDeleteStatement('orders', 'id', $conn);
+
 function sendDeleteStatement($table, $row, $pdo)
 {
    $sql = "DELETE FROM $table WHERE $row = :id";
